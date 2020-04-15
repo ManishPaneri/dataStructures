@@ -53,7 +53,6 @@ public class NumberOfCountPalindromicSubString {
              if (j < (n - 1) && (str.charAt(j - 1) == str.charAt(j + 1) && str.charAt(j) != str.charAt(j - 1)))
                  totalCount += Math.min(sameCharArr[j - 1],sameCharArr[j + 1]);
          }
-
          return totalCount - n ;
      }
 

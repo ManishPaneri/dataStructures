@@ -20,8 +20,7 @@ public class FirstNonRepeatingCharacter {
 
                 for (int j = index; j <= i; j++) {
 
-                    if ((hm.containsKey(str.charAt(j))
-                            && hm.get(str.charAt(j)) == 1)
+                    if ((hm.containsKey(str.charAt(j)) && hm.get(str.charAt(j)) == 1)
                             ||!hm.containsKey(str.charAt(j))) {
                         index = j;
                         break;

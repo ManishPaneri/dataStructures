@@ -18,28 +18,33 @@ Explain:
 
 public class MaximumSizeRectangle {
 
-    public static int findMaximunSizeRectangle(int[][] matrix, int m , int n){
+    static int findMaximunSizeRectangle(int[][] matrix, int m , int n){
+        int max = 0;
+        for(int i = 0; i < m; i++){
+            if (matrix[0][i] != 0) {
+                max++;
+            }
+        }
 
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m ; j++){
                 if(matrix[i][j] == 1 && i != 0){
                     matrix[i][j]  +=matrix[i-1][j];
-//                    System.out.print(matrix[i][j]);
+//              System.out.print(matrix[i][j]);
                 }
             }
-//            System.out.println("\n");
+//      System.out.println("\n");
         }
 
-        int max = 0;
-        for(int i = 0; i < m; i++){
+        for(int i = 1; i < m; i++){
             int rowmax = 0;
             for(int j = 0; j < n ; j++){
-                System.out.print(matrix[i][j]);
-                rowmax += matrix[i][j];
+                if(matrix[i][j]!=0){
+                    rowmax++;
+                }
             }
-            System.out.println("\n");
-            if(max < rowmax){
-                max = rowmax;
+            if(max < (2*rowmax)){
+                max = 2*rowmax;
             }
         }
 
